@@ -27,6 +27,10 @@ fi
 JEKYLL_ENV=production bundle exec jekyll build -s ${JEKYLL_SRC} -d build
 echo "Jekyll build done"
 
+if [ -f CNAME ]; then
+    cp CNAME build
+fi
+
 cd build
 
 # No need to have GitHub Pages to run Jekyll
